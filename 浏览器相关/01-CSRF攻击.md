@@ -17,8 +17,11 @@
 # 二、攻击类型与示例
 
 攻击类型	实现方式	案例  
-GET型攻击‌	通过<img>标签或<a>链接触发恶意请求	<img src="http://bank.com/transfer?to=hacker&amount=1000">（示例来源）  
-POST型攻击‌	构造隐藏表单自动提交	恶意页面嵌入自动执行的<form action="http://bank.com/transfer" method="POST">  
+GET型攻击‌	通过<img>标签或<a>链接触发恶意请求	
+```html 
+<img src="http://bank.com/transfer?to=hacker&amount=1000">```
+POST型攻击‌	构造隐藏表单自动提交	恶意页面嵌入自动执行的
+```html <form action="http://bank.com/transfer" method="POST"> ```
 复杂请求‌	结合AJAX/XHR技术绕过部分防御措施（需跨域策略支持）	使用Fetch API绕过Referer检查  
 
 
@@ -50,7 +53,7 @@ Content Security Policy‌	限制第三方资源加载策略	配置复杂度高�
 CTF漏洞利用‌  
 
 Token共享漏洞‌：多个用户共享同一Token实现请求伪造  
-Referer绕过‌：构造https://victim.com/attack.html目录结构欺骗检查  
+Referer绕过‌：构造目录结构欺骗检查  
 
 # 五、开发注意事项
 
