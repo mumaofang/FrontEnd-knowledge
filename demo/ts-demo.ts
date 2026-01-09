@@ -26,4 +26,3 @@ function ddd(id: number): { name: string, id: number } {
     }
 }
 type ddd1 = ReturnType1<typeof ddd>;
-console.log(typeof ddd)
