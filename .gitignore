@@ -1,3 +1,5 @@
+# 忽略特定文件夹
 demo/
+demo
 node_modules/
 readme.md
