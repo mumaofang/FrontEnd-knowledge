@@ -41,10 +41,11 @@ POST型攻击‌	构造隐藏表单自动提交	恶意页面嵌入自动执行�
 
 - 2. 补充防护手段
 
-  |方法|原理|局限性 | 
+  |方法    |原理   |局限性 | 
+  |-------|-------|-------|
   |SameSite Cookie属性‌|设置Cookie的SameSite=Strict/Lax，限制跨域携带Cookie|部分旧浏览器不支持  |  
-  |Referer检查‌|验证请求来源域名|可能被伪造或缺失（如HTTPS跳转HTTP）   | 
-  |Content Security Policy‌|限制第三方资源加载策略|配置复杂度高，需结合其他措施   | 
+  |Referer检查‌|验证请求来源域名|可能被伪造或缺失（如HTTPS跳转HTTP） | 
+  |Content Security Policy‌|限制第三方资源加载策略|配置复杂度高，需结合其他措施| 
 
 # 四、实战场景与CTF案例
 
