@@ -1,4 +1,6 @@
-XSS攻击（跨站脚本攻击）是一种利用网页漏洞注入恶意脚本并诱导用户执行的攻击方式。攻击者通过篡改网页内容或构造特定请求，使受害者在浏览器中加载并执行未经授权的脚本，进而窃取数据、劫持会话或破坏系统功能。以下是其核心要点：
+XSS攻击（跨站脚本攻击）： Cross-Site Scripting 
+
+是一种利用网页漏洞注入恶意脚本并诱导用户执行的攻击方式。攻击者通过篡改网页内容或构造特定请求，使受害者在浏览器中加载并执行未经授权的脚本，进而窃取数据、劫持会话或破坏系统功能。
 
 # 一、攻击类型与技术原理‌
 
@@ -28,15 +30,15 @@ XSS攻击（跨站脚本攻击）是一种利用网页漏洞注入恶意脚本�
     通过内容安全策略（Content Security Policy）限制脚本来源，禁止加载未经授权的资源。
     通过HTTP响应头配置
     Apache: .htaccess 设置 
-    ```
+    ``` Apache
         Header set Content-Security-Policy "default-src 'self'; script-src 'self' 
     ```
     Nginx: 配置文件中设置
         add_header Content-Security-Policy "default-src 'self'; img-src *; style-src ;
     通过HTML meta标签配置
-``` html
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src https:; img-src 'self' data:;">
-```
+    ``` html
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src https:; img-src 'self' data:;">
+    ```
 - 设置HttpOnly属性‌
 Cookie标记为HttpOnly，防止JavaScript直接读取敏感信息。
 
