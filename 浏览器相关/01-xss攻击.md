@@ -27,25 +27,25 @@ XSS攻击（跨站脚本攻击）： Cross-Site Scripting
 动态内容输出时，对HTML、JavaScript、CSS等上下文进行转义处理，例如将 < 转为 &lt;。
 
 - 启用CSP策略‌
-    通过内容安全策略（Content Security Policy）限制脚本来源，禁止加载未经授权的资源。
-    通过HTTP响应头配置
-    Apache: .htaccess 设置 
+    通过内容安全策略（Content Security Policy）限制脚本来源，禁止加载未经授权的资源。  
+    通过HTTP响应头配置  
+    Apache: .htaccess 设置   
     ``` Apache
         Header set Content-Security-Policy "default-src 'self'; script-src 'self' 
     ```
-    Nginx: 配置文件中设置
-        add_header Content-Security-Policy "default-src 'self'; img-src *; style-src ;
-    通过HTML meta标签配置
+    Nginx: 配置文件中设置  
+        add_header Content-Security-Policy "default-src 'self'; img-src *; style-src ;  
+    通过HTML meta标签配置  
     ``` html
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src https:; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src https:; img-src 'self' data:;">  
     ```
-- 设置HttpOnly属性‌
-Cookie标记为HttpOnly，防止JavaScript直接读取敏感信息。
+- 设置HttpOnly属性‌  
+Cookie标记为HttpOnly，防止JavaScript直接读取敏感信息。  
 
-- 框架与库的防护‌
-使用现代前端框架（如Vue/Angular）的默认编码机制，避免手动拼接HTML。
+- 框架与库的防护‌  
+使用现代前端框架（如Vue/Angular）的默认编码机制，避免手动拼接HTML。  
 
 # 四、典型示例‌
-SQL注入与XSS结合‌：攻击者利用SQL注入漏洞获取数据库权限后，进一步植入XSS脚本扩大攻击范围。
-基于DOM的会话劫持‌：通过修改页面中的登录表单，将用户凭证发送至攻击者服务器。
-XSS攻击因隐蔽性强、危害面广，长期位居Web安全威胁前列。开发需遵循安全编码规范，结合自动化工具（如渗透测试、代码审计）持续排查隐患。
+SQL注入与XSS结合‌：攻击者利用SQL注入漏洞获取数据库权限后，进一步植入XSS脚本扩大攻击范围。  
+基于DOM的会话劫持‌：通过修改页面中的登录表单，将用户凭证发送至攻击者服务器。  
+XSS攻击因隐蔽性强、危害面广，长期位居Web安全威胁前列。开发需遵循安全编码规范，结合自动化工具（如渗透测试、代码审计）持续排查隐患。  
