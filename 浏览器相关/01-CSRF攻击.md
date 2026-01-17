@@ -29,21 +29,21 @@ POST型攻击‌	构造隐藏表单自动提交	恶意页面嵌入自动执行�
 
 # 三、防御措施
 - 1. 主流防御方案  
-- Anti-CSRF Token验证‌: 服务器生成唯一Token，嵌入表单或请求头，验证请求合法性  
-```html
-<!-- 表单示例 -->
-<form action="/transfer" method="POST">
-  <input type="hidden" name="csrf_token" value="随机字符串">
-</form>
-```
-- 双重验证机制‌  
-- 关键操作需二次确认（如短信验证码、密码复核）  
+ - Anti-CSRF Token验证‌: 服务器生成唯一Token，嵌入表单或请求头，验证请求合法性  
+  ```html
+  <!-- 表单示例 -->
+  <form action="/transfer" method="POST">
+    <input type="hidden" name="csrf_token" value="随机字符串">
+  </form>
+  ```
+ - 双重验证机制‌  
+ - 关键操作需二次确认（如短信验证码、密码复核）  
 
 - 2. 补充防护手段
-方法	原理	局限性  
-SameSite Cookie属性‌	设置Cookie的SameSite=Strict/Lax，限制跨域携带Cookie	部分旧浏览器不支持  
-Referer检查‌	验证请求来源域名	可能被伪造或缺失（如HTTPS跳转HTTP）  
-Content Security Policy‌	限制第三方资源加载策略	配置复杂度高，需结合其他措施  
+|方法|原理|局限性  
+|SameSite Cookie属性‌|设置Cookie的SameSite=Strict/Lax，限制跨域携带Cookie|部分旧浏览器不支持  
+|Referer检查‌|验证请求来源域名|可能被伪造或缺失（如HTTPS跳转HTTP）  
+|Content Security Policy‌|限制第三方资源加载策略|配置复杂度高，需结合其他措施  
 
 # 四、实战场景与CTF案例
 
