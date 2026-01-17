@@ -1,8 +1,8 @@
 HTML在浏览器的执行顺序解析
 # 一、基础执行流程
-                                           
-    HTML解析 → CSS解析 → 样式计算 → 布局(Layout) → 绘制(Paint) → 合成(Composite)
-          ↘ JavaScript执行 ↗         ↘ 重排(回流)触发 ↗ ↘ 重绘触发 ↗
+                            
+    HTML解析 →  渲染树构建(样式计算) → 布局(Layout)   →    绘制(Paint) → 合成(Composite)
+    CSS解析  ↗                              ↘ 重排(回流)触发 ↗  ↘ 重绘触发 ↗
 
 - DOM树构建‌(HTML解析构建)  
   HTML解析器通过词法分析将文本转换为符号序列，生成DOM树结构  
