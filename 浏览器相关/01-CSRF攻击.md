@@ -17,9 +17,13 @@
 攻击类型	实现方式	案例  
 GET型攻击‌	通过<img>标签或<a>链接触发恶意请求	
 ```html 
-<img src="http://bank.com/transfer?to=hacker&amount=1000">```
+<img src="http://bank.com/transfer?to=hacker&amount=1000">
+```
 POST型攻击‌	构造隐藏表单自动提交	恶意页面嵌入自动执行的
-```html <form action="http://bank.com/transfer" method="POST"> ```
+```html 
+<form action="http://bank.com/transfer" method="POST"> 
+```
+
 复杂请求‌	结合AJAX/XHR技术绕过部分防御措施（需跨域策略支持）	使用Fetch API绕过Referer检查  
 
 
